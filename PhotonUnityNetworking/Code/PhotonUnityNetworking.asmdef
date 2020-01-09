@@ -1,0 +1,17 @@
+{
+    "name": "PhotonUnityNetworking",
+    "references": [
+        "PhotonRealtime",
+        "d4160.GameFramework",
+        "d4160-core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

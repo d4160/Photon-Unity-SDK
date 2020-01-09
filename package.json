@@ -1,0 +1,22 @@
+{
+  "name": "exit-games.photon-unity-sdk",
+  "displayName": "Photon Unity Networking SDK",
+  "version": "2.16.1",
+  "unity": "2017.4",
+  "description": "PUN 2 is all you need to easily add multiplayer to your games and launch them globally. Forget about hosting, connection issues and latency. ",
+  "keywords": [
+    "PUN2",
+    "sdk"
+  ],
+  "author": {
+    "name": "Exit Games"
+  },
+  "dependencies":{
+    "d4160.game-framework-core": "1.0.0",
+	"d4160.game-framework": "1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d4160/Photon-Unity-SDK.git"
+  }
+}

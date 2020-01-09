@@ -1,0 +1,19 @@
+{
+    "name": "d4160.PhotonChat.UI",
+    "references": [
+        "GUID:abd02ea2a3d741f48b1c16eb7025fec5",
+        "GUID:96af450922a291f4a858da1ec21b0ebd",
+        "GUID:115a3056a51e172458fbc4df44828e11",
+        "GUID:08a110bd598f7604f9519c2d7e1fb3cc",
+        "GUID:2cdd2d7185cecba49bc26121f86bc1ec"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

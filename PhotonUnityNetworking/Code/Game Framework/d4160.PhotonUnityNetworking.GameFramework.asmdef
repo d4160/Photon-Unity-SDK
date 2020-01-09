@@ -1,0 +1,17 @@
+{
+    "name": "d4160.PhotonUnityNetworking.GameFramework",
+    "references": [
+        "GUID:96af450922a291f4a858da1ec21b0ebd",
+        "GUID:57c32fc907df0f54e8e6e8f0d2488336",
+        "GUID:831409e8f9d13b5479a3baef9822ad34"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
