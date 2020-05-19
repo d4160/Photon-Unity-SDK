@@ -1,17 +1,10 @@
-{
+﻿{
     "name": "PhotonChat",
     "references": [
-        "PhotonWebSocket",
-        "d4160_Networking-Helper-System",
-        "PropertyDrawersCollection"
+        "PhotonWebSocket"
     ],
+    "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+    "allowUnsafeCode": false
 }

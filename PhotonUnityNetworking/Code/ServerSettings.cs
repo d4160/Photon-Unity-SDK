@@ -24,11 +24,14 @@ namespace Photon.Pun
     /// Includes the AppSettings class from the Realtime APIs plus some other, PUN-relevant, settings.</remarks>
     [Serializable]
     [HelpURL("https://doc.photonengine.com/en-us/pun/v2/getting-started/initial-setup")]
-    [CreateAssetMenu(fileName = "PhotonServerSettings", menuName = "Photon Unity Networking/Make Server Settings", order = 1)]
     public class ServerSettings : ScriptableObject
     {
         [Tooltip("Core Photon Server/Cloud settings.")]
         public AppSettings AppSettings;
+
+        /// <summary>Region that will be used by the Editor and Development Builds. This ensures all users will be in the same region for testing.</summary>
+        [Tooltip("Developer build override for Best Region.")]
+        public string DevRegion;
 
         [Tooltip("Log output by PUN.")]
         public PunLogLevel PunLogging = PunLogLevel.ErrorsOnly;
@@ -46,10 +49,9 @@ namespace Photon.Pun
         public List<string> RpcList = new List<string>();   // set by scripts and or via Inspector
 
         #if UNITY_EDITOR
-        [HideInInspector]
         public bool DisableAutoOpenWizard;
-        [HideInInspector]
         public bool ShowSettings;
+        public bool DevRegionSetOnce;
         #endif
 
         /// <summary>Sets appid and region code in the AppSettings. Used in Editor.</summary>

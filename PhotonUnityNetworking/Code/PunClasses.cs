@@ -143,7 +143,7 @@ namespace Photon.Pun
     ///
     /// To be able to enable a GameObject, Instantiate must return an inactive object.
     ///
-    /// Before PUN "destroys" GameObjects, it will disable them.
+    /// Before PUN "destroys" GameObjects, it will disable them. 
     ///
     /// If a component implements IPunInstantiateMagicCallback, PUN will call OnPhotonInstantiate
     /// when the networked object gets instantiated. If no components implement this on a prefab,
@@ -210,7 +210,7 @@ namespace Photon.Pun
     ///
     /// Do not add <b>new</b> <code>MonoBehaviour.OnEnable</code> or <code>MonoBehaviour.OnDisable</code>
     /// Instead, you should override those and call <code>base.OnEnable</code> and <code>base.OnDisable</code>.
-    ///
+    /// 
     /// Visual Studio and MonoDevelop should provide the list of methods when you begin typing "override".
     /// <b>Your implementation does not have to call "base.method()".</b>
     ///
@@ -218,7 +218,7 @@ namespace Photon.Pun
     /// </remarks>
     /// \ingroup callbacks
     // the documentation for the interface methods becomes inherited when Doxygen builds it.
-    public class MonoBehaviourPunCallbacks : MonoBehaviourPun, IConnectionCallbacks , IMatchmakingCallbacks , IInRoomCallbacks, ILobbyCallbacks, IWebRpcCallback
+    public class MonoBehaviourPunCallbacks : MonoBehaviourPun, IConnectionCallbacks , IMatchmakingCallbacks , IInRoomCallbacks, ILobbyCallbacks, IWebRpcCallback, IErrorInfoCallback
     {
         public virtual void OnEnable()
         {
@@ -512,6 +512,24 @@ namespace Photon.Pun
         //TODO: Check if this needs to be implemented
         // in: IOptionalInfoCallbacks
         public virtual void OnLobbyStatisticsUpdate(List<TypedLobbyInfo> lobbyStatistics)
+        {
+        }
+
+        /// <summary>
+        /// Called when the client receives an event from the server indicating that an error happened there.
+        /// </summary>
+        /// <remarks>
+        /// In most cases this could be either:
+        /// 1. an error from webhooks plugin (if HasErrorInfo is enabled), read more here:
+        /// https://doc.photonengine.com/en-us/realtime/current/gameplay/web-extensions/webhooks#options
+        /// 2. an error sent from a custom server plugin via PluginHost.BroadcastErrorInfoEvent, see example here: 
+        /// https://doc.photonengine.com/en-us/server/current/plugins/manual#handling_http_response
+        /// 3. an error sent from the server, for example, when the limit of cached events has been exceeded in the room
+        /// (all clients will be disconnected and the room will be closed in this case)
+        /// read more here: https://doc.photonengine.com/en-us/realtime/current/gameplay/cached-events#special_considerations
+        /// </remarks>
+        /// <param name="errorInfo">object containing information about the error</param>
+        public virtual void OnErrorInfo(ErrorInfo errorInfo)
         {
         }
     }
@@ -953,7 +971,7 @@ namespace Photon.Pun
     {
         /// <summary>Contains a GameObject per prefabId, to speed up instantiation.</summary>
         public readonly Dictionary<string, GameObject> ResourceCache = new Dictionary<string, GameObject>();
-
+        
         /// <summary>Returns an inactive instance of a networked GameObject, to be used by PUN.</summary>
         /// <param name="prefabId">String identifier for the networked object.</param>
         /// <param name="position">Location of the new object.</param>
