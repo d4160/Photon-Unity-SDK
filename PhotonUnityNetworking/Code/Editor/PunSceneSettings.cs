@@ -85,7 +85,7 @@ namespace Photon.Pun
                 }
 
                 //instanceField = (PunSceneSettings) AssetDatabase.LoadAssetAtPath(PunSceneSettingsCsPath, typeof(PunSceneSettings));
-                instanceField = Resources.Load<PunSceneSettings>("PunSceneSettingsFile");
+                instanceField = Resources.Load<PunSceneSettings>("PhotonServerSettings");
                 if (instanceField == null)
                 {
                     instanceField = ScriptableObject.CreateInstance<PunSceneSettings>();
